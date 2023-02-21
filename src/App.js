@@ -26,7 +26,6 @@ function App() {
     localStorage.setItem("todoItem", JSON.stringify([...todoTask, addedTask]))
   }
   const editValue = (id, value,key) => {
-    console.log("r8n")
     const updatedList = todoTask?.map((item) => {
       if (item.id === id) {
         const update = item
