@@ -21,16 +21,20 @@ function App() {
       createdAt: new Date(),
       completed: false
     }
-    setTodoTask([...todoTask, addedTask])
-    setNewTask('')
-    localStorage.setItem("todoItem", JSON.stringify([...todoTask, addedTask]))
+    if (newTask) {
+      setTodoTask([...todoTask, addedTask])
+      setNewTask('')
+      localStorage.setItem("todoItem", JSON.stringify([...todoTask, addedTask]))
+    } else {
+      alert("Please enter a value")
+    }
   }
-  const editValue = (id, value,key) => {
+  const editValue = (id, value, key) => {
     const updatedList = todoTask?.map((item) => {
       if (item.id === id) {
         const update = item
         update[key] = value
-        return ({...update})
+        return ({ ...update })
       } else {
         return ({ ...item })
       }

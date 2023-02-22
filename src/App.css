@@ -54,7 +54,7 @@ button {
 }
 .noData{
     border: none;
-    text-align: center;
+    justify-content: center;
 }
 button:hover {
 	color: #333;
